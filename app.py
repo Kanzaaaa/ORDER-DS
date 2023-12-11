@@ -45,6 +45,6 @@ def handle_mqtt_message(client, userdata, message):
         dl.order_cancel(OrderCancel.from_json(data['payload']))
 
 
-@app.route("/get_order_status/<order_id>")
+@app.route("/order/<order_id>")
 def GetOrderStatus(order_id):
     return dl.GetOrderStatus(order_id)
