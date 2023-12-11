@@ -5,8 +5,8 @@ mqtt_client_id = 'ds-inventory'
 mqtt_username = 'ds-inventory'
 mqtt_password = ''
 
-mqtt_topic_on_stock = 'public-front/on-stock'
-mqtt_topic_out_of_stock = 'public-front/out-of-stock'
+mqtt_topic_on_stock = 'inventory/on-stock'
+mqtt_topic_out_of_stock = 'inventory/out-of-stock'
 mqtt_topic_on_order_send = 'public-front/order-send'
 
 mqtt_topic_on_order_canceled = 'public-front/order-canceled'
