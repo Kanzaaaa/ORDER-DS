@@ -1,9 +1,9 @@
-mqtt_host = 'el6icz3en0fo-scdyi8ws59yk.cedalo.dev'
-mqtt_port = 1883
+mqtt_host = ''
+mqtt_port = ''
 mqtt_transport = 'tcp' #tcp or websockets. Use websockets if issues with firewall
 mqtt_client_id = 'ds-inventory'
 mqtt_username = 'ds-inventory'
-mqtt_password = 'E9SBLg:M2mhbG3w'
+mqtt_password = ''
 
 mqtt_topic_on_stock = 'public-front/on-stock'
 mqtt_topic_out_of_stock = 'public-front/out-of-stock'
