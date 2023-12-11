@@ -12,8 +12,5 @@ mqtt_topic_on_order_send = 'public-front/order-send'
 mqtt_topic_on_order_canceled = 'public-front/order-canceled'
 mqtt_topic_on_order_canceled_2 = 'order/order-canceled'
 
-
-
-
 db = './db/ds-order.sqlite'
 db_migrate = './migrate_scripts/*.sql'
