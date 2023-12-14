@@ -27,10 +27,11 @@ def GetOrderStatus(order_id: str) -> str:
             row = cursor.fetchone()
             if row:
                 order_status = row[0]
+            print(f"Order fetch executed {order_id}")
         finally:
             conn.close()
 
-    return order_status
+    return '{"order_status": "' + order_status + '"}'
 
 
 def OrderSend(order: Orders):
@@ -99,9 +100,10 @@ def update_order_status(order_id, new_status):
             conn.close()
 
 def message_publish(topic: str, payload: str):
-    print("Outgoing message")
-    print(F"Topic: {topic}")
-    print(F"Payload: {payload}")
+    print("")
+    print("\033[93mOutgoing message\033[00m")
+    print(F"\033[93mTopic: {topic}\033[00m")
+    print(F"\033[93mPayload: {payload}\033[00m")
 
     publish.single(
         topic,

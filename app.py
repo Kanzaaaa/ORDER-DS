@@ -30,21 +30,25 @@ def handle_mqtt_message(client, userdata, message):
         topic=message.topic,
         payload=message.payload.decode()
     )
+    print("")
+    print("\033[93mIncoming message topic: " + message.topic + "\033[00m")
 
     if data['topic'] == config.mqtt_topic_on_order_send:
-        print(data['payload'])
+        print("\033[93mPayload: " + data['payload'] + "\033[00m")
         dl.OrderSend(Order.from_json(data['payload']))
     elif data['topic'] == config.mqtt_topic_out_of_stock:
-        print(data['payload'])
+        print("\033[93mPayload: " + data['payload'] + "\033[00m")
         dl.outstock(OrderOut.from_json(data['payload']))
     elif data['topic'] == config.mqtt_topic_on_stock:
-        print(data['payload'])
+        print("\033[93mPayload: " + data['payload'] + "\033[00m")
         dl.onstock(OrderInStock.from_json(data['payload']))
     elif data['topic'] == config.mqtt_topic_on_order_canceled:
-        print(data['payload'])
+        print("\033[93mPayload: " + data['payload'] + "\033[00m")
         dl.order_cancel(OrderCancel.from_json(data['payload']))
 
 
 @app.route("/order/<order_id>")
 def GetOrderStatus(order_id):
+    print("")
+    print("\033[93mOrder - GET /order/" + order_id + "\033[00m")
     return dl.GetOrderStatus(order_id)
