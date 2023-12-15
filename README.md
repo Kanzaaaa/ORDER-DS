@@ -18,9 +18,9 @@ python -m flask run --host=0.0.0.0 --port=8081
 
 ## Public API
 
-### GGetOrderStatus
+### GetOrderStatus
 
-http://127.0.0.1:8081//get_order_status/<order_id>
+http://127.0.0.1:8081/order/<order_id>
 
 Response
 
@@ -54,14 +54,14 @@ topic: order/order-canceled
 
 ### InStock
 
-topic: public-front/on-stock
+topic: inventory/on-stock
 
 ```json
 {"orderId": ""}
 ```
 ### OutOfStock
 
-topic: public-front/out-of-stock
+topic: inventory/out-of-stock
 
 ```json
 {"orderId": ""}
